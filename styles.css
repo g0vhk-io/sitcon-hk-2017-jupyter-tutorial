@@ -2,5 +2,22 @@
 .impress-not-supported .no-support-message { display:block; }
 
 /* additional styles just to make things look a bit nicer */
-body { background:#EBEBEB; font:48px/96px "HelveticaNeue-Light", "Helvetica Neue Light", "Helvetica Neue", Helvetica, Arial, "Lucida Grande", sans-serif; color:#333; }
-.step { width:940px; margin:0 auto 24px auto; text-align:center; }
+body { background:#EBEBEB; font:16px "HelveticaNeue-Light", "Helvetica Neue Light", "Helvetica Neue", Helvetica, Arial, "Lucida Grande", sans-serif; color:#333; }
+.step { width:1280px; margin:0 auto 24px auto; text-align:left; font-size: 36px}
+
+div#thank-you img{
+  min-height:120%;
+  min-width:120%;
+  height:auto;
+  width:auto;
+  position:absolute;
+  top:-110%; bottom:-110%;
+  left:-110%; right:-110%;
+  margin:auto;
+}
+
+
+div#me img{
+  position:absolute;
+  top: 10%; right:10%;
+}
