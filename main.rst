@@ -5,6 +5,15 @@
 :css: styles.css
 :id: index
 
+.. raw:: html
+
+	<meta property="og:url" content="https://g0vhk-io.github.io/sitcon-hk-2017-jupyter-tutorial/"/>
+	<meta property="og:type" content="article" />
+	<meta property="og:title" content="Jupyter 101" />
+	<meta property="og:description" content="Jupyter 101" />
+	<meta property="og:image" content="images/preview.png" />
+
+
 Jupyter 101 @ SITCON X HK 2017
 ==============================
 
@@ -48,13 +57,17 @@ About Myself
 What is Jupyter?
 ================
 
+.. image:: images/jupyter-sq-text.svg
+   :width: 500
+   :height: 500
+
 ----
 
 
 .. _kernels: https://github.com/jupyter/jupyter/wiki/jupyter-kernels
 
-What is Jupyter?
-================
+Jupyter is ...
+==============
 
 * forked from ipython in 2014
 * interactive data science tool
