@@ -19,13 +19,14 @@ Jupyter 101 @ SITCON X HK 2017
 
 ----
 
+
 Today's Agenda
 ==============
 
-1. Jupyter
-2. Pandas
-3. Plot.ly
-4. scikit
+1. *Notebook*: Jupyter
+2. *Data Processing*: Pandas
+3. *Data Visualization*: Plotly
+4. *Machine Learning*: sklearn & Propert
 
 ----
 
@@ -34,13 +35,16 @@ Today's Agenda
 About Myself
 ============
 
+
+.. _g0vhk: http://g0vhk.io
+.. _oursky: http://oursky.com
+
 * Python & Open Source Developer
 * Open Data Advocate
-* Now working at Oursky Ltd
+* Now working at Oursky_ Ltd
+* Founder of g0vhk_
 
 .. image:: images/me.jpg
-
-
 
 
 ----
@@ -61,9 +65,20 @@ Jupyter is ...
 ==============
 
 * forked from ipython in 2014
-* interactive data science tool
+* interactive data science & programming tool
 * language agnostic (kernels_)
 * rich support and free
+
+
+
+----
+
+How does that work
+==================
+
+.. image:: images/jupyter.png
+
+
 
 ----
 
@@ -82,9 +97,12 @@ Installation
 Let's Run Jupyter 
 =================
 * :bash:`jupyter notebook`
+* go to http://localhost:8888
 
 
 ----
+
+:id: interface
 
 Interface
 =========
@@ -94,7 +112,11 @@ Interface
 * Toolbar
 * Counter
 
+.. image:: images/sample_ui.png
+
 ----
+
+:id: interface2
 
 Interface (Home)
 ================
@@ -104,6 +126,7 @@ Interface (Home)
 
 ----
 
+:id: interface3
 
 Interface (Tool Bar)
 ====================
@@ -113,6 +136,8 @@ Interface (Tool Bar)
 
 
 ----
+
+:id: interface4
 
 Interface (Cells & Counter)
 ===========================

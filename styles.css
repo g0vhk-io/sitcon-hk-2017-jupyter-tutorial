@@ -21,3 +21,27 @@ div#me img{
   position:absolute;
   top: 10%; right:10%;
 }
+
+div#interface img{
+  position:absolute;
+  top: -10%;
+  right:-10%;
+  width: 75%;
+  border: 3px solid #CCC;
+  box-shadow: 10px 10px 5px #888888;
+}
+
+div#interface2 img {
+  border: 3px solid #CCC;
+  box-shadow: 10px 10px 5px #888888;
+}
+
+div#interface3 img {
+  border: 3px solid #CCC;
+  box-shadow: 10px 10px 5px #888888;
+}
+
+div#interface4 img {
+  border: 3px solid #CCC;
+  box-shadow: 10px 10px 5px #888888;
+}
