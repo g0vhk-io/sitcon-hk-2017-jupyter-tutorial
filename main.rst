@@ -71,10 +71,59 @@ Installation
 
 * Very simple
 * :bash:`python3 -mvenv ./env`
-* :bash:`source ./env/bin/activate`
 * :bash:`pip install jupyter`
 
 ----
+
+Let's Run Jupyter 
+=================
+* :bash:`jupyter notebook`
+
+
+----
+
+Interface
+=========
+
+* Home
+* Cell
+* Toolbar
+* Counter
+
+----
+
+Interface (Home)
+================
+.. image:: images/home.png
+
+
+
+----
+
+
+Interface (Tool Bar)
+====================
+
+.. image:: images/toolbar.png
+
+
+
+----
+
+Interface (Cells & Counter)
+===========================
+
+
+.. image:: images/cells.png
+
+
+
+
+
+
+----
+
+
 
 Markdown
 ================
@@ -84,6 +133,7 @@ Markdown
 * General HTML
 
 ----
+
 
 :data-rotate: 90
 
@@ -95,6 +145,14 @@ Now, let's write some code. :)
 
 ----
 
+
+lsmagic
+=======
+* Show you magic functions
+* :bash:`%env SITCON=2017`
+* :bash:`%%writefile hello.py`, :bash:`%pycat hello.py`
+
+----
 
 
 :data-rotate: 270
