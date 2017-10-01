@@ -154,6 +154,121 @@ lsmagic
 
 ----
 
+Code
+====
+
+* :bash:`! ls`
+* Now let's write some python code!
+
+
+----
+
+Data Manipulation with Pandas
+=============================
+
+.. image:: http://pandas.pydata.org/_static/pandas_logo.png
+
+* Open source data analysis library
+
+----
+
+Pandas
+======
+* Basic Concepts
+	* Series
+		* 1D array
+	* DataFrame
+		* 2D array
+	* Properties
+		* indices
+		* columns
+
+----
+
+Let's load some data first
+==========================
+* :bash:`df.read_csv`
+* :bash:`df.head`
+
+.. image:: images/df_head.png
+
+
+----
+
+Query
+=====
+
+
+
+----
+
+Column Mainuplation
+===================
+
+----
+
+Aggregation
+===========
+
+
+----
+
+
+Sorting
+=======
+
+
+----
+
+Visualization
+=============
+
+* So far we just display the data in tabular
+* Let's do some graph plotting
+
+----
+
+Popular Plotting Library
+========================
+* Matlibplot
+* Plot.ly
+* etc
+* Today we use plot.ly
+
+----
+
+Plot.ly
+==========
+
+* Registration 
+* You need `username` and `API Key`
+
+.. image:: images/api_key.png
+
+----
+
+Plot.ly
+=======
+* Let's try a bar chart first
+* And then a pie chart
+
+
+----
+
+Plot.ly
+=======
+* What about a map?
+
+
+
+----
+
+Machine Learning
+================
+* scikit
+* Simple Linear Regression
+
+----
 
 :data-rotate: 270
 :id: thank-you
