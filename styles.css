@@ -45,3 +45,12 @@ div#interface4 img {
   border: 3px solid #CCC;
   box-shadow: 10px 10px 5px #888888;
 }
+
+div#pandas-concept img{
+  position:absolute;
+  top: 30%;
+  right: -5%;
+  width: 75%;
+  border: 3px solid #CCC;
+  box-shadow: 10px 10px 5px #888888;
+}

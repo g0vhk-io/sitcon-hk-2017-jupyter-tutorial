@@ -73,6 +73,8 @@ Jupyter is ...
 
 ----
 
+:data-scale: 2
+
 How does that work
 ==================
 
@@ -82,17 +84,29 @@ How does that work
 
 ----
 
+:data-scale: 1
+
 .. role:: bash(code)
    :language: bash
 
 Installation
 ============
 
-* Very simple
-* :bash:`python3 -mvenv ./env`
-* :bash:`pip install jupyter`
+
+.. raw:: html
+
+  <pre>
+    <code class="bash">
+       python3 -mvenv ./env
+       source ./env/bin/activate
+       pip install -r requirements.txt
+     </code>
+  </pre>
 
 ----
+
+
+:data-y: 500
 
 Let's Run Jupyter 
 =================
@@ -152,7 +166,7 @@ Interface (Cells & Counter)
 
 ----
 
-
+:data-y: 900
 
 Markdown
 ================
@@ -174,24 +188,6 @@ Now, let's write some code. :)
 
 ----
 
-
-lsmagic
-=======
-* Show you magic functions
-* :bash:`%env SITCON=2017`
-* :bash:`%%writefile hello.py`, :bash:`%pycat hello.py`
-
-----
-
-Code
-====
-
-* :bash:`! ls`
-* Now let's write some python code!
-
-
-----
-
 Data Manipulation with Pandas
 =============================
 
@@ -201,38 +197,69 @@ Data Manipulation with Pandas
 
 ----
 
+:id: pandas-concept
+
 Pandas
 ======
 * Basic Concepts
-	* Series
-		* 1D array
-	* DataFrame
-		* 2D array
-	* Properties
-		* indices
-		* columns
+    * Series
+        * 1D array
+    * DataFrame
+        * 2D array
+    * Properties
+        * indices
+        * columns
+
+
+.. image:: images/sample_df.png
 
 ----
 
 Let's load some data first
 ==========================
-* :bash:`df.read_csv`
-* :bash:`df.head`
 
-.. image:: images/df_head.png
+.. raw:: html
+
+  <pre>
+    <code class="python">
+    import pandas as pd
+    df = pd.read_csv('aapl.csv')
+    df.head()
+    df[0].count #Number of Rows
+      </code>
+  </pre>
+
 
 
 ----
 
-Query
-=====
+Selecting Row by Conditions
+===========================
 
+.. raw:: html
 
+  <pre>
+    <code class="python">
+    df2 = df[(df['Date'] >= '1999-01-01') 
+             & (df['Date'] <= '1999-02-28')]
+    df2.head()
+      </code>
+  </pre>
 
 ----
 
-Column Mainuplation
+Column Manipulation
 ===================
+
+.. raw:: html
+
+  <pre>
+    <code class="python">
+    del df['Adj Close'] 
+    df['year'] = pd.to_numeric(df['Date'].str[0:4])
+      </code>
+  </pre>
+
 
 ----
 
@@ -245,6 +272,17 @@ Aggregation
 
 Sorting
 =======
+
+
+.. raw:: html
+
+  <pre>
+    <code class="python">
+    df = df.sort_values('Date')
+    df = df.reset_index(drop = True)
+      </code>
+  </pre>
+
 
 
 ----
@@ -269,33 +307,83 @@ Popular Plotting Library
 Plot.ly
 ==========
 
-* Registration 
+* Registration
+* Setting Page
 * You need `username` and `API Key`
 
 .. image:: images/api_key.png
 
 ----
 
-Plot.ly
-=======
-* Let's try a bar chart first
-* And then a pie chart
+Using Plot.ly
+=============
+
+.. raw:: html
+
+    <pre>
+        <code class="python">
+        import plotly 
+        plotly.tools.set_credentials_file(username='<USERNAME>', api_key='<API-KEY>')
+
+        import plotly.plotly as py
+        import plotly.graph_objs as go
+        </code>
+    </pre>   
+
+----
+
+Plot.ly (Scatter)
+=================
+* Let's try a scatter chart first
 
 
 ----
 
-Plot.ly
-=======
-* What about a map?
+Plot.ly (Bar)
+=================
+* Now plot a bar chart
 
 
 
 ----
+
+
+Plot.ly (Sankey Diagram)
+========================
+
+
+
+----
+
+
+Plot.ly (Tree map)
+========================
+
+
+
+----
+
 
 Machine Learning
 ================
 * scikit
 * Simple Linear Regression
+
+----
+
+
+Simple Linear Regression
+========================
+* scikit
+* Simple Linear Regression
+
+
+----
+
+Not accurate? What about Prophet?
+=================================
+
+
 
 ----
 

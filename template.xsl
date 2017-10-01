@@ -21,7 +21,12 @@ xmlns="http://www.w3.org/1999/xhtml">
 <html>
   <head>
     <title><xsl:value-of select="/document/@title"/></title>
-
+    <link rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/9.12.0/styles/default.min.css"/>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/9.12.0/highlight.min.js"></script>
+    <script>hljs.initHighlightingOnLoad();</script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/9.12.0/languages/python.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/9.12.0/languages/bash.min.js"></script>
     <xsl:for-each select="/document/templateinfo/header/css">
       <link rel="stylesheet">
         <xsl:copy-of select="@*"/>
@@ -87,7 +92,6 @@ xmlns="http://www.w3.org/1999/xhtml">
         <xsl:copy-of select="@*"/>
       </script>
     </xsl:for-each>
-
 </body>
 </html>
 </xsl:template>
