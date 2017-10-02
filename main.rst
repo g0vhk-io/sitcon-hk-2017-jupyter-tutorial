@@ -370,6 +370,7 @@ Plot.ly (Bar)
 ----
 
 
+:id: treemap
 
 Plot.ly (Tree Map)
 ========================
@@ -396,28 +397,100 @@ Plot.ly (Tree Map)
 
 Machine Learning
 ================
-* scikit
-* Simple Linear Regression
+* Program which **"learns"** from data, without being modified.
+* Today, we will take stock prediction as an example.
+
+----
+
+:id: linear
+
+Simple Linear Regression
+========================
+
+.. image:: images/linear.png
+
 
 ----
 
 
 Simple Linear Regression
 ========================
-* scikit
+* sklearn
 * Simple Linear Regression
+    * Minimize mean square error
+
+
+
 
 
 ----
 
-Not accurate? What about Prophet?
-=================================
+Simple Linear Regression
+========================
 
+.. raw:: html
 
+    <pre>
+        <code class="python">
+        from sklearn import linear_model
+        X = [[x] for x in trained_data['index']]
+        y = trained_data['Open'].tolist()
+        reg = linear_model.LinearRegression()
+        reg.fit(X, y)
+        ...
+        reg.predict(X2)
+        </code>
+    </pre> 
 
 ----
+
+Want to get a better result?
+============================
+Let's try Facebook's prophet!
+=============================
+
+* Forecasting is a hard problem
+* Prophets provides a easy to use API
+* Addictive Model
+* with Seasonality and Public Holidays
+
+----
+
+
+Prophet
+=======
+
+
+.. raw:: html
+
+    <pre>
+        <code class="python">
+        from fbprophet import Prophet
+        m = Prophet()
+        ...
+        m.fit(trained_data_2)
+        future = m.make_future_dataframe(periods=365*3)
+        forecast = m.predict(future)
+        forecast[['ds', 'yhat']].tail()
+        </code>
+    </pre>
+
+----
+
+:id: prophet
+
+Prophet Result
+==============
+
+.. image:: images/prophet.png
+
+----
+
+
 
 :data-rotate: 270
-:id: thank-you
 
-.. image:: images/thankyou.jpg
+Thank You! Happy Coding!
+========================
+
+

@@ -60,10 +60,30 @@ howa.wong@gmail.com<br/>
     bars = go.Bar(x=X, y=Y)
     py.iplot([bars])
     </code>
-</pre></div><div class="step step-level-1" step="26" data-rotate-x="0" data-rotate-y="0" data-rotate-z="90" data-scale="1" data-x="41600" data-y="900" data-z="0"><h1 id="plot-ly-tree-map">Plot.ly (Tree Map)</h1><img src="images/treemap.png"></img></div><div class="step step-level-1" step="27" data-rotate-x="0" data-rotate-y="0" data-rotate-z="90" data-scale="1" data-x="43200" data-y="900" data-z="0"><h1 id="id3">Plot.ly (Tree Map)</h1><pre>
+</pre></div><div class="step step-level-1" step="26" id="treemap" data-rotate-x="0" data-rotate-y="0" data-rotate-z="90" data-scale="1" data-x="41600" data-y="900" data-z="0"><h1 id="plot-ly-tree-map">Plot.ly (Tree Map)</h1><img src="images/treemap.png"></img></div><div class="step step-level-1" step="27" data-rotate-x="0" data-rotate-y="0" data-rotate-z="90" data-scale="1" data-x="43200" data-y="900" data-z="0"><h1 id="id3">Plot.ly (Tree Map)</h1><pre>
     <code class="python">
     import squarify
     normed = squarify.normalize_sizes(values, width, height)
     rects = squarify.squarify(normed, x, y, width, height)
     </code>
-</pre></div><div class="step step-level-1" step="28" data-rotate-x="0" data-rotate-y="0" data-rotate-z="90" data-scale="1" data-x="44800" data-y="900" data-z="0"><h1 id="machine-learning">Machine Learning</h1><ul><li>scikit</li><li>Simple Linear Regression</li></ul></div><div class="step step-level-1" step="29" data-rotate-x="0" data-rotate-y="0" data-rotate-z="90" data-scale="1" data-x="46400" data-y="900" data-z="0"><h1 id="simple-linear-regression">Simple Linear Regression</h1><ul><li>scikit</li><li>Simple Linear Regression</li></ul></div><div class="step step-level-1" step="30" data-rotate-x="0" data-rotate-y="0" data-rotate-z="90" data-scale="1" data-x="48000" data-y="900" data-z="0"><h1 id="not-accurate-what-about-prophet">Not accurate? What about Prophet?</h1></div><div class="step step-level-1" step="31" id="thank-you" data-rotate-x="0" data-rotate-y="0" data-rotate-z="270" data-scale="1" data-x="49600" data-y="900" data-z="0"><img src="images/thankyou.jpg"></img></div></div><div id="hovercraft-help" class="show"><table><tr><th>Left, Down, Page Down, Space</th><td>Next slide</td></tr><tr><th>Right, Up, Page Up</th><td>Previous slide</td></tr><tr><th>H</th><td>Toggle this help</td></tr></table></div><script type="text/javascript" src="js/impress.js"></script><script type="text/javascript" src="js/hovercraft.js"></script></body></html>
+</pre></div><div class="step step-level-1" step="28" data-rotate-x="0" data-rotate-y="0" data-rotate-z="90" data-scale="1" data-x="44800" data-y="900" data-z="0"><h1 id="machine-learning">Machine Learning</h1><ul><li>Program which <strong>"learns"</strong> from data, without being modified.</li><li>Today, we will take stock prediction as an example.</li></ul></div><div class="step step-level-1" step="29" id="linear" data-rotate-x="0" data-rotate-y="0" data-rotate-z="90" data-scale="1" data-x="46400" data-y="900" data-z="0"><h1 id="simple-linear-regression">Simple Linear Regression</h1><img src="images/linear.png"></img></div><div class="step step-level-1" step="30" data-rotate-x="0" data-rotate-y="0" data-rotate-z="90" data-scale="1" data-x="48000" data-y="900" data-z="0"><h1 id="id4">Simple Linear Regression</h1><ul><li>sklearn</li><li><dl><dt>Simple Linear Regression</dt><dd><ul><li>Minimize mean square error</li></ul></dd></dl></li></ul></div><div class="step step-level-1" step="31" data-rotate-x="0" data-rotate-y="0" data-rotate-z="90" data-scale="1" data-x="49600" data-y="900" data-z="0"><h1 id="id5">Simple Linear Regression</h1><pre>
+    <code class="python">
+    from sklearn import linear_model
+    X = [[x] for x in trained_data['index']]
+    y = trained_data['Open'].tolist()
+    reg = linear_model.LinearRegression()
+    reg.fit(X, y)
+    ...
+    reg.predict(X2)
+    </code>
+</pre></div><div class="step step-level-1" step="32" data-rotate-x="0" data-rotate-y="0" data-rotate-z="90" data-scale="1" data-x="51200" data-y="900" data-z="0"><h1 id="want-to-get-a-better-result">Want to get a better result?</h1><h1 id="let-s-try-facebook-s-prophet">Let's try Facebook's prophet!</h1><ul><li>Forecasting is a hard problem</li><li>Prophets provides a easy to use API</li><li>Addictive Model</li><li>with Seasonality and Public Holidays</li></ul></div><div class="step step-level-1" step="33" data-rotate-x="0" data-rotate-y="0" data-rotate-z="90" data-scale="1" data-x="52800" data-y="900" data-z="0"><h1 id="prophet">Prophet</h1><pre>
+    <code class="python">
+    from fbprophet import Prophet
+    m = Prophet()
+    ...
+    m.fit(trained_data_2)
+    future = m.make_future_dataframe(periods=365*3)
+    forecast = m.predict(future)
+    forecast[['ds', 'yhat']].tail()
+    </code>
+</pre></div><div class="step step-level-1" step="34" id="prophet" data-rotate-x="0" data-rotate-y="0" data-rotate-z="90" data-scale="1" data-x="54400" data-y="900" data-z="0"><h1 id="prophet-result">Prophet Result</h1><img src="images/prophet.png"></img></div><div class="step step-level-1" step="35" data-rotate-x="0" data-rotate-y="0" data-rotate-z="270" data-scale="1" data-x="56000" data-y="900" data-z="0"><h1 id="thank-you-happy-coding">Thank You! Happy Coding!</h1></div></div><div id="hovercraft-help" class="show"><table><tr><th>Left, Down, Page Down, Space</th><td>Next slide</td></tr><tr><th>Right, Up, Page Up</th><td>Previous slide</td></tr><tr><th>H</th><td>Toggle this help</td></tr></table></div><script type="text/javascript" src="js/impress.js"></script><script type="text/javascript" src="js/hovercraft.js"></script></body></html>
