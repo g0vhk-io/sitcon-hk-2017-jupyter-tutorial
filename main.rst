@@ -128,41 +128,6 @@ Interface
 
 .. image:: images/sample_ui.png
 
-----
-
-:id: interface2
-
-Interface (Home)
-================
-.. image:: images/home.png
-
-
-
-----
-
-:id: interface3
-
-Interface (Tool Bar)
-====================
-
-.. image:: images/toolbar.png
-
-
-
-----
-
-:id: interface4
-
-Interface (Cells & Counter)
-===========================
-
-
-.. image:: images/cells.png
-
-
-
-
-
 
 ----
 
@@ -266,6 +231,16 @@ Column Manipulation
 Aggregation
 ===========
 
+.. raw:: html
+
+  <pre>
+    <code class="python">
+    df2 = df.groupby('year').agg(['mean'])
+    </code>
+  </pre>
+
+
+
 
 ----
 
@@ -290,19 +265,22 @@ Sorting
 Visualization
 =============
 
-* So far we just display the data in tabular
+* Getting bored? 
+* So far we just display the tabular data
 * Let's do some graph plotting
 
 ----
 
 Popular Plotting Library
 ========================
-* Matlibplot
+* Matplotlib
 * Plot.ly
-* etc
+* ggplot
 * Today we use plot.ly
 
 ----
+
+:id: plotly-reg
 
 Plot.ly
 ==========
@@ -323,7 +301,8 @@ Using Plot.ly
     <pre>
         <code class="python">
         import plotly 
-        plotly.tools.set_credentials_file(username='<USERNAME>', api_key='<API-KEY>')
+        plotly.tools.set_credentials_file(username='<USERNAME>',
+                                          api_key='<API-KEY>')
 
         import plotly.plotly as py
         import plotly.graph_objs as go
@@ -332,37 +311,88 @@ Using Plot.ly
 
 ----
 
+:id: scatter-1
+
+Plot.ly (Scatter)
+=================
+
+.. image:: images/scatter.png
+
+
+----
+
+
 Plot.ly (Scatter)
 =================
 * Let's try a scatter chart first
+
+.. raw:: html
+
+    <pre>
+        <code class="python">
+        c= ['hsl('+str(h)+',50%'+',50%)'
+            for h in np.linspace(0, 360, N)]
+        trace = go.Scatter(x=X,
+                           y=Y,
+                           mode='markers',
+                           name='random',
+                           marker={'color': c})
+        py.iplot([trace]) 
+        </code>
+    </pre> 
+
+
+
+----
+
+:id: bar
+
+Plot.ly (Bar)
+=================
+
+.. image:: images/bar.png
 
 
 ----
 
 Plot.ly (Bar)
 =================
-* Now plot a bar chart
 
+.. raw:: html
 
+    <pre>
+        <code class="python">
+        bars = go.Bar(x=X, y=Y)
+        py.iplot([bars])
+        </code>
+    </pre> 
 
 ----
 
 
-Plot.ly (Sankey Diagram)
+
+Plot.ly (Tree Map)
 ========================
 
 
+.. image:: images/treemap.png
 
 ----
 
+Plot.ly (Tree Map)
+==================
 
-Plot.ly (Tree map)
-========================
+.. raw:: html
 
-
+    <pre>
+        <code class="python">
+        import squarify
+        normed = squarify.normalize_sizes(values, width, height)
+        rects = squarify.squarify(normed, x, y, width, height)    
+        </code>
+    </pre> 
 
 ----
-
 
 Machine Learning
 ================

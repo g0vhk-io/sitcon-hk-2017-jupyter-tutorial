@@ -46,6 +46,23 @@ div#interface4 img {
   box-shadow: 10px 10px 5px #888888;
 }
 
+div#scatter-1 img {
+  border: 3px solid #CCC;
+  box-shadow: 10px 10px 5px #888888;
+}
+
+div#bar img {
+  border: 3px solid #CCC;
+  box-shadow: 10px 10px 5px #888888;
+}
+
+div#plotly-reg img {
+  border: 3px solid #CCC;
+  box-shadow: 10px 10px 5px #888888;
+}
+
+
+
 div#pandas-concept img{
   position:absolute;
   top: 30%;
