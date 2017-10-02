@@ -1,4 +1,8 @@
+Cython==0.26
+prophet
+squarify
 pandas
 jupyter
 plotly
-
+scipy
+sklearn
